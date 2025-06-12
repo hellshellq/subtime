@@ -36,6 +36,9 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 COPY ./.docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY ./.docker/nginx/nginx.conf /etc/nginx/nginx.conf
 
+# Копируем конфигурацию PHP-FPM
+COPY ./.docker/php-fpm/www.conf /etc/php82/php-fpm.d/www.conf
+
 # Открываем порт для Nginx
 EXPOSE 80
 
