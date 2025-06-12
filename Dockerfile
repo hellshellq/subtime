@@ -34,6 +34,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 
 # Копируем конфигурацию Nginx
 COPY ./.docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./.docker/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Открываем порт для Nginx
 EXPOSE 80
